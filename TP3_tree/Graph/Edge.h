@@ -6,18 +6,17 @@ class Node;
 #include "Node.h"
 
 class Edge : public LinkedListElement { //Arête
+public:
 
-	public :
+	Edge(int cost, Node* neighbor);
 
-		Edge(int cost, Node* neighbor);
+	unsigned int getCost();
+	Node* getNeighbor();
 
-		unsigned int getCost();
-		Node* getNeighbor();
+	~Edge();
 
-		~Edge();
+private:
 
-	private :
-
-		unsigned int cost;
-		Node* neighbor;
+	unsigned int cost;
+	Node* neighbor;
 };

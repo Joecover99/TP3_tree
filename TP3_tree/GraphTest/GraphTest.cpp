@@ -7,7 +7,7 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace GraphTest
-{		
+{
 	TEST_CLASS(GraphTest)
 	{
 	public:
@@ -20,7 +20,7 @@ namespace GraphTest
 			//Assert
 		}
 		*/
-		
+
 		TEST_METHOD(EDGE_getCost_retourne_le_prix)
 		{
 			//Arrange
@@ -52,7 +52,7 @@ namespace GraphTest
 		}
 		*/
 		//////////////////////////////////////////////////////////
-		
+
 		TEST_METHOD(NODE_getName_retourne_le_nom_du_sommet)
 		{
 			//Arrange
@@ -65,7 +65,7 @@ namespace GraphTest
 			//Assert
 			Assert::AreEqual(any_name, actualName);
 		}
-		
+
 		TEST_METHOD(NODE_addEdge_add_element_to_list)
 		{
 			//Arrange

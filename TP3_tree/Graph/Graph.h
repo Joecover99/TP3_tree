@@ -5,23 +5,23 @@
 #include "Node.h"
 
 class Graph { //Graphe
-	
-	public :
-		
-		Graph();
-		~Graph();
-		void addSommet(std::string name);
-		void deleteSommet(std::string name);
-		Node* getSommet(std::string name);
+public:
 
-		//int getBestCost(); //Points bonus
+	Graph();
+	~Graph();
+	void addSommet(std::string name, Node* node);
+	//void addSommet(std::string name);
+	void deleteSommet(std::string name);
+	Node* getSommet(std::string name);
 
-	private :
+	//int getBestCost(); //Points bonus
 
-		LinkedList* listNodes;
+private:
 
-		struct NameAlreadyUsed : public std::exception
-		{
-			//Message d'exception ici au besoin.
-		};
+	LinkedList* listNodes;
+
+	struct NameAlreadyUsed : public std::exception
+	{
+		//Message d'exception ici au besoin.
+	};
 };

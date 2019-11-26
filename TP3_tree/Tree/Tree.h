@@ -47,8 +47,8 @@ private:
 	//Fonction pour le balance
 	bool isBalance(Node* _root);
 	int checkTreeHeight(Node _root);
-	void rotateToRight(Node *_parent);
-	void rotateToLeft(Node *_parent);
+	void rotateToRight(Node* _parent);
+	void rotateToLeft(Node* _parent);
 	void doubleRotateToRight();
 	void doubleTotateToLeft();
 	void setLeft(Node* node);
@@ -58,5 +58,4 @@ private:
 	struct numberAlreadyUsed : public std::exception {
 		//Exception pour l'élément déjà existant
 	};
-
 };

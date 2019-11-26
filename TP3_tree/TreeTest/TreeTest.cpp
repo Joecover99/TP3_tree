@@ -8,7 +8,7 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest1
-{		
+{
 	TEST_CLASS(TreeTest)
 	{
 	public:
@@ -218,7 +218,7 @@ namespace UnitTest1
 			const int EXPECTED_DEPTH = 1;
 			Assert::AreEqual(EXPECTED_DEPTH, depthOfElement);
 		}
-		
+
 		TEST_METHOD(find_retourne_2_quand_lelement_est_de_profondeur_deux)
 		{
 			//Arrange
@@ -339,6 +339,5 @@ namespace UnitTest1
 			Assert::IsTrue(exceptionCatched);
 		}
 		*/
-
 	};
 }

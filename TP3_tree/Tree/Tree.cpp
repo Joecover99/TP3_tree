@@ -21,7 +21,7 @@ void Tree::remove(Node* node) {
 void Tree::add(TreeElement* element) {
 	if (this->_root == NULL) {
 		this->_root = new Node(element, NULL); //Arbre vide donc node devient la racineù
-	} 
+	}
 	else {
 		if (find(element) != -1) throw new numberAlreadyUsed; //!= -1 car s'il retourne -1 ca veut dire qu'il n'est pas présent
 		add(element, this->_root);
@@ -84,38 +84,32 @@ int checkTreeHeight(Node _root)
 	else
 		return Math.max(leftChildHeight, rightChildHeight) + 1; // Return Height
 		*/
-void Tree::rotateToLeft(Node *_parent) {
-	Node *temp;
+void Tree::rotateToLeft(Node* _parent) {
+	Node* temp;
 	temp = _parent->_left;
 	_parent->_left = temp->_right;
 	temp->_right = _parent;
 }
 
-void Tree::rotateToRight(Node *_parent) {
-	Node *temp;
+void Tree::rotateToRight(Node* _parent) {
+	Node* temp;
 	temp = _parent->_right;
 	_parent->_right = temp->_left;
 	temp->_left = _parent;
 }
 
-
-
-void Tree::balance(Node* lastNodeAdded) 
+void Tree::balance(Node* lastNodeAdded)
 {
-	if(!isBalance){
-		
-	}
-	/*
+	/*if(!isBalance){
+	}*/
+
 	Node* nodeToCheckIfBalanced = lastNodeAdded->_parent->_parent;
 	Node* parent = lastNodeAdded->_parent;
 
 	if (nodeToCheckIfBalanced->_left == NULL) {
-		
 	}
 	if (nodeToCheckIfBalanced->_right == NULL) {
-		
 	}
-	*/
 }
 
 int Tree::find(TreeElement* element) {
@@ -132,7 +126,7 @@ int Tree::find(TreeElement* element, Node* node) {
 		else if (*element < *(node->_element)) {
 			find(element, node->_left);
 		}
-		else if (*element > *(node->_element)) {
+		else if (*element > * (node->_element)) {
 			find(element, node->_right);
 		}
 	}
@@ -190,18 +184,6 @@ int Tree::depthOfTree(Node* node) {
 		}
 		else {
 			return right;
-		}	
+		}
 	}
 }
-/*
-void Tree::rotateToRight(Node* node) {
-	Node* left = node->_left;
-	node->setLeft(left_tree->getRight());
-	left_tree->setRight(subRoot);
-	subRoot = left_tree;
-}
-
-void Tree::setLeft(Node* node) {
-
-}
-*/

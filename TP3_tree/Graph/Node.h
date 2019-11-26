@@ -7,23 +7,22 @@
 #include "LinkedList.h"
 
 class Node : public LinkedListElement { //Sommet
+public:
 
-	public :
+	Node(std::string name);
 
-		Node(std::string name);
+	void addEdge(Node* node, int cost);
+	void deleteEdge(std::string name);
+	std::string getName();
+	unsigned int getNumberOfEdges();
+	bool checkIfNeighbor(std::string name);
 
-		void addEdge(Node* node, int cost);
-		void deleteEdge(std::string name);
-		std::string getName();
-		unsigned int getNumberOfEdges();
-		bool checkIfNeighbor(std::string name);
+	~Node();
 
-		~Node();
+private:
 
-	private :
-
-		std::string name;
-		LinkedList* listEdges;
+	std::string name;
+	LinkedList* listEdges;
 
 	struct EdgeAlreadyUsed : public std::exception
 	{

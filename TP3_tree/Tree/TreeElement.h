@@ -1,13 +1,11 @@
 #pragma once
 
 class TreeElement {
+public:
+	virtual bool operator==(const TreeElement& element) = 0;
+	virtual bool operator<(const TreeElement& element) = 0;
+	virtual bool operator>(const TreeElement& element) = 0;
 
-	public:
-		virtual bool operator==(const TreeElement& element) = 0;
-		virtual bool operator<(const TreeElement& element) = 0;
-		virtual bool operator>(const TreeElement& element) = 0;
-
-	protected:
-		TreeElement() {};
-
+protected:
+	TreeElement() {};
 };

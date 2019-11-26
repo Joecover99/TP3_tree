@@ -9,5 +9,3 @@
 
 // En-têtes pour CppUnitTest
 #include "CppUnitTest.h"
-
-

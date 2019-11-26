@@ -10,7 +10,7 @@ LinkedList::LinkedList()
 
 void LinkedList::add(LinkedListElement& element)
 {
-	Cell *temp;
+	Cell* temp;
 
 	if (isEmpty()) {
 		temp = new Cell(&element, NULL, NULL);
@@ -119,5 +119,4 @@ LinkedListElement& LinkedList::ListIterator::next()
 
 LinkedList::ListIterator::~ListIterator()
 {
-
 }

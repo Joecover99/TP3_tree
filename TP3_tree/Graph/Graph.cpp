@@ -11,48 +11,47 @@ Graph::~Graph()
 {
 }
 
-void Graph::addSommet(std::string name,Node* node)
+void Graph::addSommet(std::string name, Node* node)
 {
-	
-	if(name == this->listNodes->getIterator)
-	{
-		 throw NameAlreadyUsed();
-	}
-	if(this->listNodes->isEmpty())
-	{
-		Edge* sommetToAdd = new Edge(name, node);
-		this->listNodes->add(sommetToAdd);
+	Iterator* iterator = this->listNodes->getIterator();
+	int counter = 0;
 
-
-	}
-	if (node == this) throw sommetToAdd();
-/*
-	if (this->listEdges->isEmpty()) {
-		Edge* edgeToAdd = new Edge(cost, node);
-		this->listEdges->add(*edgeToAdd);
-	}
-	else {
-		Iterator* listToCheck = this->listEdges->getIterator();
-		int counter = 0;
-		Node* temp = (Node*)&listToCheck->current();
-		while (counter < this->listEdges->getNbElements()) {
-			if (temp == node) {
-				throw EdgeAlreadyUsed();
-			}
-			temp = (Node*)&listToCheck->previous();
-			counter++;
+	Node* temp = (Node * &)iterator->current();
+	while (counter < this->listNodes->getNbElements())
+	{
+		if (temp->getName() == name)
+		{
+			throw NameAlreadyUsed();
 		}
-		Edge* edgeToAdd = new Edge(cost, node);
-		this->listEdges->add(*edgeToAdd);
-	}*/
+		Node temp = (Node&)iterator->previous();
+		counter++;
+	}
+	Node* nodeToAdd = new Node(name);
+	this->listNodes->add(*nodeToAdd);
 }
 
 void Graph::deleteSommet(std::string name)
 {
-
+	Iterator* iterator = this->listNodes->getIterator();
+	int counter = this->listNodes->getNbElements();
+	while (counter < this->listNodes->getNbElements()) {
+		Node* temp = (Node*)& iterator->previous();
+		if (temp->getName() == name) {
+			iterator->remove(*temp);
+			break;
+		}
+		if (counter == (this->listNodes->getNbElements() - 1))
+		{
+			break;
+		}
+		counter--;
+	}
 }
 
 Node* Graph::getSommet(std::string name)
 {
-	return NULL;
+	Iterator* iterator = this->listNodes->getIterator();
+	Node* node = (Node*)& iterator->current();
+
+	return node;
 }
