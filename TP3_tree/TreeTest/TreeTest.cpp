@@ -12,14 +12,6 @@ namespace UnitTest1
 	TEST_CLASS(TreeTest)
 	{
 	public:
-		/* EXEMPLE VIDE
-		TEST_METHOD(Test)
-		{
-			//Arrange
-			//Action
-			//Assert
-		}
-		*/
 		TEST_METHOD(isEmpty_retourne_true_quand_larbre_est_vide)
 		{
 			//Arrange
